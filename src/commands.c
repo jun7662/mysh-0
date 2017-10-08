@@ -26,8 +26,8 @@ int validate_cd_argv(int argc, char** argv) {
 
 int validate_pwd_argv(int argc, char** argv) {
   // TODO: Fill it!
-	if(argc != 1) return -1;
-	else if(strcmp(argv[0],"pwd")!=0) return -1;
+	if(argc != 1) return 0;
+	else if(strcmp(argv[0],"pwd")!=0) return 0;
 	
   return 1;
 }
