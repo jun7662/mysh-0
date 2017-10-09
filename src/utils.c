@@ -11,6 +11,10 @@ void mysh_parse_command(const char* command,
 
 	str = (char*)malloc(strlen(command)+1);
 	*argv = (char**)malloc(i * sizeof(char**));
+	**argv = (char*)malloc(1);
+
+	*argc = 1;
+	strcpy(**argv,"");
 
 	strcpy(str,command);
 	tok = strtok(str," \t\n\r");
@@ -23,5 +27,5 @@ void mysh_parse_command(const char* command,
 		strcpy(*(*argv+i++),tok);
 		tok = strtok(NULL," \t\n\r");
 	}
-	*argc = i;
+	if(i>1) *argc = i;
 }
